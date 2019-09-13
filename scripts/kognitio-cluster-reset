@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo "This command will remove all persistent data for your kognitio cluster"
+echo "including any license keys and ALL DATA STORED IN THE CLUSTER."
+echo
+echo "After doing this you will need to re-run kognitio-cluster-init."
+echo "You should stop all but one container before running this and "
+echo "restart them all after this is complete."
+
+echo
+
+while [ -z "$continue" ] ; do
+      echo "Hit ctrl-c to abort or type 'continue' to continue"
+
+      read continue
+      if [ "$continue" != "continue" ] ; then
+         echo "You entered $continue not continue"
+         continue =
+      fi
+done
+
+rm -rf /data/config
+rm -rf /data/nodes
+rm -rf /data/dfs

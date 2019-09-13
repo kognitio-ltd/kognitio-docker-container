@@ -1,0 +1,773 @@
+KOGNITIO SOFTWARE LICENSE AGREEMENT
+
+IMPORTANT NOTICE:  Read this Software Licence Agreement carefully
+before using the enclosed Product.  You may use the Product in
+accordance with the following terms and conditions.  IF YOU DO NOT
+AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE PRODUCT.  By
+installing or using the Product is any way, You acknowledge that You
+have read, understand and agree to the terms of this Agreement.  If
+You do not agree with these terms, promptly return the Product and
+package (and all other Product contents, including Documentation) with
+Your proof of purchase to the entity from which You obtained this
+Product within 30 days and request a refund. 
+
+BY INSTALLING THIS SOFTWARE YOU ARE AGREEING TO ACCEPT THIS LICENSE.
+
+If You, Your company, or Your public agency have signed a written
+Software License Agreement with Kognitio Limited (the
+"Licensor") or an authorised reseller, covering the Use of the
+enclosed Products, the terms of the signed license agreement shall
+take precedence over any conflicting terms of this Agreement
+
+
+
+1 - DEFINITIONS
+
+1.1: "Affiliate" means any corporation, firm, partnership or other entity that 
+directly or indirectly controls, or is controlled by, or is under common 
+control with Licensee.
+
+1.2: "Agreement" means this document and attached Purchase Schedule
+and any further schedules which may be added by agreement between
+the Parties.
+
+1.3: "Certified Operating Environment" or "COE" means all pertinent
+hardware, operating system software and other software on which the
+Product is certified by Licensor to operate.  The COE pertinent to
+this License Agreement is defined in the Purchase Schedule.
+
+1.4: "Documentation" means the manual(s) and other documents
+associated with Product supplied by Licensor to Licensee.
+	
+1.5: "Effective Date" means the date the Product(s) is electronically 
+downloaded.
+
+1.6: "Free-To-Use" or "FTU" means there is no fee to use the Product.
+
+1.7: "License" means the license to use Products granted to the
+Licensee by Licensor hereunder.
+
+1.8: "License Fee" means the fee chargeable by Licensor to Licensee
+for Use of the Product as set out in the Purchase Schedule.
+
+1.9: "Non-Production" means execution of the Product excluding Production use 
+purposes including development, testing and demonstration.
+
+1.10: "Parties" means the Licensor and Licensee or in the singular
+either the Licensor or Licensee, as the context demands.
+
+1.11: "Product" means the Licensor's proprietary software programs specified in 
+the Purchase Schedule supplied to Licensee in object
+code and shall include any replacements, modifications or additions
+supplied under the License.
+
+1.12: "Production" means execution of the Product for the purposes of running 
+day to day business operations.
+
+1.13: "Purchase Schedule" means the document attached to this Agreement
+where set out are the Products and terms, the applicable Licence
+Fees, the COE and any other restrictions on the Use of the Products.
+
+1.14: "Server" means the server platform as specified in the Purchase
+Schedule
+
+1.15: "Use" means storing, installing, loading, executing or
+displaying Product on a computer, processor or controller or making
+a copy of the Product for archiving or back-up purposes.
+
+2. FREE-TO-USE PRODUCT
+
+2.1: Free-to-Use Product. The Free-to-Use Product is only available to the 
+Licensee if the Licensee or any of its Affiliates does not have a current 
+software license or services agreement in place with the Licensor or any one of 
+its resellers.    Any organisations with current agreements are advised to 
+contact the Licensor or their nominated reseller. 
+2.2: Subject to clause 2.1, the Free-to-Use Product is only available for use 
+when running on a Hadoop cluster inside a YARN container and HDFS is being used 
+for internal data storage.
+2.3 Downloading the Free-To-Use Product. The Free-To-Use Product is accessible 
+from the Licensor’s website for electronic download.  Downloading the 
+Free-To-Use Product does not automatically grant a valid License to use the 
+Product. Risk of loss passes at the time of such electronic delivery. Licensee 
+agrees not to request any physical delivery of Products and should it occur any 
+such delivery shall be rejected by Licensor.
+2.4. Changes to the Free-To-Use License. The Licensor may chose not to provide 
+further versions of the Product at any time, at its sole discretion.
+2.5. Product Support & Maintenance for the Free-To-Use License.  Product 
+Support and Maintenance is optional and the Licensor has no obligation to 
+provide Product Support and Maintenance unless purchased.  There are various 
+levels of Product Support and Maintenance, details of which can be found on the 
+Licensors website.  Note that if the Licensee requires Support and Maintenance 
+and has multiple Production systems then Product Support and Maintenance is 
+required for all such systems.
+2.6. Free-To-Use terms. The Free-To-Use License is subject to clauses 4, 5, 6, 
+7, 8 and 9. For the avoidance of doubt, the License of the Free-To-Use License 
+is not subject to clauses 10,11,12,13,14, 15, 16, 17 and 18.
+
+3. Standard Product
+If the Product is to be used on any environment except on a Hadoop cluster 
+inside a YARN container and HDFS is being used for internal data storage 
+("Standard Product"), then the License is subject to the Licensor’s standard 
+terms as defined in clauses 10,11, 12, 13, 14, 15, 16, 17 and 18.  For the 
+avoidance of doubt, the License of the Standard Product is not subject to 
+clauses 4, 5, 6, 7, 8 and 9.
+
+
+4 - THE FTU LICENSE
+
+4.1: Subject to Licensee meeting the conditions to use the Free-To-Use Product 
+as defined in clause 2, Licensee is granted a perpetual, non-exclusive, 
+non-transferable license to use the Product, subject to the terms and 
+conditions of this Agreement.
+
+4.2: The Licensee may make copies of the Product(s). All copyright, trademark 
+and related proprietary notices incorporated in or fixed to the Product shall 
+be duplicated by Licensee on all copies or extracts of the Product.
+
+4.3: All intellectual property rights and title to the Product shall
+remain with Licensor and no interest or ownership therein is
+conveyed to Licensee under this Agreement.
+
+4.4: Except to the extent permitted by the law, Licensee will not disassemble 
+or decompile the Product without the Licensor's written consent.  Where 
+Licensee has rights under statute, Licensee will provide Licensor with 
+reasonably detailed information regarding any intended disassembly or 
+decompilation.  The Licensor has the right to impose reasonable conditions, 
+such as reasonable fees for doing so.  Licensee will not decrypt the Product 
+unless necessary for legitimate use of the Product.
+
+4.5: Unless otherwise specified in this Agreement, Product may be used
+  solely to meet Licensee's own internal data processing requirements.
+  Licensee may not lease, loan, resell or otherwise distribute the
+  Product; or permit access to or use of the Product by or on behalf
+  of any third party.
+
+4.6: Product Territory. The licenses granted hereunder are valid in
+  all territories (the "Territory") except that Licensee acknowledges
+  that the export of the Product may be subject to regulations and
+  shall be solely responsible for complying with such
+  regulations. Licensee represents and warrants that it shall not,
+  directly or indirectly, export, re-export, tranship or use the
+  Products or related technology or commit any act in violation of any
+  applicable export control laws and regulations.
+
+4.7: Certified Operating Environment.  The Product may only be used in
+  the COE specified in the Purchase Schedule.  Licensee may, upon
+  Licensor's prior written consent, change the COE, provided at the
+  time of such change the COE is supported by Licensor.  A change in
+  the COE may be subject to additional fee at Licensor's then current
+  rates.
+
+4.8: Product Documentation is made available on-line.  Copies of Documentation 
+may be made by Licensee for internal use at no additional charge, subject to 
+the Licensor copyright notice being reproduced on all copies 
+
+5 - FTU, TERM AND TERMINATION
+
+5.1: This Agreement and the License granted hereunder is perpetual and shall 
+become effective as of the Effective Date. However, Licensor may immediately 
+terminate this Agreement or any other services hereunder if Licensee has used 
+the Product otherwise than in accordance with the Agreement; 
+5.2: If a license for one or more Products is terminated for any reason, 
+Licensee must immediately un-install and destroy all copies of such Product and 
+certify to Licensor, in writing and within thirty (30) days of such 
+termination, that such Products have been un-installed and destroyed.
+5.3: This Clause shall survive the termination of this Agreement.
+
+
+6 - FTU, LICENSEE RESPONSIBILITIES
+
+6.1: Licensee is responsible for:
+6.1.1: The installation, testing, management and operational use of
+    the Licensed Products and the results obtained therefrom,
+    including all audit controls, as well as the combination of
+    Licensed Products with each other and with other equipment and/or
+    programs, except that if, agreed between the Parties in writing
+    under a separate agreement, Licensor may take responsibility for
+    installation and testing for a fee.
+
+6.1.2: Taking appropriate action to satisfy the following:
+
+6.1.2.1: not copying or otherwise providing or otherwise making
+      available for Use or otherwise the Products or any portion
+      thereof to any persons other than the employees of the Licensee
+      specifically engaged in the Use of the Products without the
+      express written consent of Licensor: and
+
+6.1.2.2: before disposing of any media, ensuring that any Licensed
+      Products contained thereon has been erased or destroyed
+
+
+7 - FTU, WARRANTY
+
+7.1: Licensor warrants that it has the full power and authority to license the 
+Products;
+7.2: THE PRODUCT IS OTHERWISE PROVIDED "AS IS", EXCEPT AS EXPRESSLY STATED IN 
+THIS AGREEMENT, ALL WARRANTIES AND CONDITIONS, WHETHER EXPRESS OR IMPLIED BY 
+STATUTE, COMMON LAW OR OTHERWISE (INCLUDING BUT NOT LIMITED TO SATISFACTORY 
+QUALITY AND FITNESS FOR PURPOSE), ARE HEREBY EXCLUDED TO THE EXTENT PERMITTED 
+BY LAW. NO WARRANTY IS MADE REGARDING THE RESULTS OF USAGE OF A PRODUCT OR THAT 
+A PRODUCT’S FUNCTIONALITY WILL MEET LICENSEE'S REQUIREMENTS OR THAT THE 
+PRODUCT WILL OPERATE UNINTERUPTED OR ERROR FREE. THIS CLAUSE SHALL SURVIVE THE 
+TERMINATION OF THIS AGREEMENT.
+
+
+8 - FTU, LIMITATION OF LIABILITY
+
+8.1: Licensor does not exclude or limit its liability to the Licensee
+  for death or personal injury caused by any negligent act or omission
+  or wilful misconduct or the Licensor or its employee.
+
+8.2: In entering this Agreement, Licensee had recourse to its own
+  skill and judgement and has not relied on any representations made
+  by Licensor.  Subject to this Clause 8: 
+
+8.2.1: In no event will Licensor or its suppliers be liable to
+    Licensee for any indirect, special, incidental, consequential or
+    punitive damages including without limitation, any loss of
+    profits, loss of revenues or loss of inaccuracy of any data even
+    if Licensor has been advised of the possibility of such damages; 
+
+8.2.2: Licensors liability to Licensee for actual damages for any
+    cause whatsoever shall be limited, not to exceed £100; and 
+
+8.3: This clause shall survive the termination of this Agreement.
+
+
+9 - FTU, GENERAL
+
+9.1: Governing Law and Venue. This Agreement shall be governed by and
+   construed in accordance with the laws of England and the parties
+   submit to the exclusive jurisdiction of the English Courts.
+
+9.2: Interpretation. In this agreement:
+
+9.2.1: Reference to any statue or statutory provision includes a
+     reference to that statute or statutory provision as from time to
+     time amended, extended or re-enacted: 
+
+9.2.2: Words importing the singular include the plural, words
+     importing any gender include every gender and words importing
+     persons include bodies corporate and unincorporate; and (in each
+     case) vice versa:
+
+9.2.3: Any Reference to a Party to this Agreement includes a
+     reference to his successors in title and permitted assigns; and
+
+9.2.4: The headings to the clauses are for ease of reference only and
+     shall not effect the interpretation or construction of this
+     Agreement.
+
+9.2: Confidential information.  The Product is the Confidential information of 
+the Licensor and the Licensee agrees not to disclose the Product or the results 
+of any performance or functional evaluation or test of the Product to any third 
+party without the prior written approval of the Licensor.
+
+9.2: Severability.  If the whole or any part of any provision of
+   this Agreement is declared unlawful, void or unenforceable, then
+   that provision or part provision shall be severed from this
+   Agreement and will not affect the validity and enforceability of
+   any of the remaining provisions
+
+9.3: Power and Authority. The Licensee warrants it has full power
+   and authority to enter into this agreement and has taken all
+   necessary actions and obtained all relevant consents, approvals or
+   authorisations to enable it to effectively to enter into and
+   perform this Agreement.
+
+
+10 - STANDARD PRODUCT: THE LICENSE
+
+10.1: Subject to Licensee's payment of Licensor fees, Licensor is
+  granted a non-exclusive, non-transferable license to use the
+  Product, subject to the terms and conditions of this
+  Agreement. Unless otherwise specified in a Schedule, Licensor grants
+  to Licensee a license to Use one copy of the Product at any one
+  time.
+
+10.2: Unless otherwise permitted by the Licensor, the Licensee may only
+  make a reasonable number of copies of the Product(s) for back-up or
+  archival purposes.  All copyright, trademark and related proprietary
+  notices incorporated in or fixed to the Product shall be duplicated
+  by Licensee on all copies or extracts of the Product.
+
+10.3: Upon 30 days written notice, the Licensor may audit your use of
+  the Product(s).  The Licensee agrees to cooperate with the
+  Licensor's audit and provide reasonable assistance and access to
+  information.
+
+10.4: All intellectual property rights and title to the Product shall
+  remain with Licensor and no interest or ownership therein is
+  conveyed to Licensee under this Agreement.
+
+10.5: Except to the extent permitted by the law, Licensee will not
+  disassemble or decompile the Product without the Licensor's written
+  consent.  Where Licensee has rights under statute, Licensee will
+  provide Licensor with reasonably detailed information regarding any
+  intended disassembly or decompilation.  The Licensor has the right
+  to impose reasonable conditions, such as reasonable fees for doing
+  so.  Licensee will not decrypt the Product unless necessary for
+  legitimate use of the Product.
+
+10.6: Unless otherwise specified in this Agreement, Product may be used
+  solely to meet Licensee's own internal data processing requirements.
+  Licensee may not lease, loan, resell or otherwise distribute the
+  Product; or permit access to or use of the Product by or on behalf
+  of any third party.
+
+10.7: Named Users. Except in the case of Products licensed on a
+  per-server basis, only individual(s) designated by Licensee ("Named
+  User(s) ") may be permitted by Licensee to use the Product, and
+  there shall be only one main user per license. Each Named User shall
+  only be allocated one common user name or common user password for
+  access to the Product.  Should there be more than one individual
+  sharing a common user name or common user password for access to the
+  Product or if a Named User is allocated more than one common user
+  name or common user password for access to the Product, separate
+  Named User Licenses must be purchased for such user or user
+  name. Licensee may install each Product License (not counting the
+  number of optional modes) (i) in the case of Product Licensed in a
+  client/server environment an on a Named User basis, on no more than
+  one client workstation or personal computer (regardless of whether
+  it is a notebook/ mobile or desktop/fixed unit); and (ii) in the
+  case of the Product licensed on a per-server basis, on one and only
+  one Server.
+
+10.8: Product Territory. The licenses granted hereunder are valid in
+  all territories (the "Territory") except that Licensee acknowledges
+  that the export of the Product may be subject to regulations and
+  shall be solely responsible for complying with such
+  regulations. Licensee represents and warrants that it shall not,
+  directly or indirectly, export, re-export, tranship or use the
+  Products or related technology or commit any act in violation of any
+  applicable export control laws and regulations.
+
+10.9: Certified Operating Environment.  The Product may only be used in
+  the COE specified in the Purchase Schedule.  Licensee may, upon
+  Licensor's prior written consent, change the COE, provided at the
+  time of such change the COE is supported by Licensor.  A change in
+  the COE may be subject to additional fee at Licensor's then current
+  rates.
+
+10.10: Product Documentation is either shipped with the Products or
+  made available on-line.  Copies of Documentation may be made by
+  Licensee for internal use at no additional charge, subject to the
+  Licensor copyright notice being reproduced on all copies 
+
+
+11 - STANDARD PRODUCT: FEES, PAYMENTS AND ORDERS
+
+11.1: The License Fee, is defined in the Purchase Schedule, and is
+  exclusive of applicable sales, use, service, value added or like
+  taxes, which shall be shown separately on invoices and paid by
+  Licensee.  Further, Licensee agrees to indemnify and hold Licensor
+  harmless from any liability for claims, penalties and costs caused
+  by Customer's failure to pay for any such taxes
+
+11.2: Licensor shall invoice Licensee for the License Fee(s) on
+  delivery of the Product
+
+11.3: The Licensee shall pay invoices within 30 days of the date of the
+  invoice. 
+
+11.4: Should any sum, due to Licensor, remain unpaid after such period,
+  Licensor reserves the right to recover all copies of the Product.
+
+11.5: Delinquent invoices shall accrue interest  (accruing from day to
+  day as well after as before any judgment or award and without
+  prejudice to any other right or remedy) at the same rate which would
+  apply were the debt a qualifying debt under The Late Payment of
+  Commercial Debts (Interest) Act 1998.  For the purposes of this sub
+  paragraph 11.5, the term "delinquent" shall not include invoices or
+  amounts disputed in good faith by Customer
+
+11.6: Ordering of Licenses and Support services. Licenses to use
+  Products or support services may be ordered from time to time under
+  the terms of this agreement by Licensee although Licensor has no
+  obligation whatsoever to accept such order. Unless explicitly set
+  forth in this agreement, any and all discounts extended by Licensor
+  under this agreement shall not automatically apply to orders for
+  additional Products and /or Support Services.
+
+
+
+12 - STANDARD PRODUCT: TERM AND TERMINATION
+
+12.1: The term of the License(s) granted hereunder is defined in the
+  Purchase Schedule provided. However, Licensor may immediately
+  terminate this Agreement or any other services hereunder if:
+
+
+12.1.1: Licensee has used the Product otherwise than in accordance with
+    the Agreement; 
+
+12.1.2: Licensor has notified Licensee in writing of a material breach
+    that is not remedied within thirty (30) days; 
+
+12.1.3: Licensee fails to pay any fees when due; or
+
+12.1.4: Licensee has a receiver or administrative receiver appointed of
+    it or over any part of its undertaking or assets or shall pass a
+    resolution for winding up  (otherwise than for the purpose of a
+    bona fide scheme of solvent amalgamation or reconstruction) or a
+    court of competent jurisdiction shall make an order to the effect
+    or if Licensee enters into any voluntary arrangement with its
+    creditors or shall become subject to an administration order.
+
+12.2: Termination shall not relieve Licensee from its obligation to pay
+  the fees that remain unpaid, and shall not limit either Party from
+  pursuing any other available remedies. Upon termination by Licensor
+  of this Agreement or any part thereof, Licensor shall have no
+  obligation to refund to Licensee any fees paid by Licensee, and
+  Licensee agrees to waive, in perpetuity and unconditionally, any and
+  all claims for refunds. 
+
+12.3: This Clause shall survive the termination of this Agreement.
+
+12.4: If a license for one or more Products is terminated for any
+  reason, Licensee must immediately un-install and destroy all copies
+  of such Product and certify to Licensor, in writing and within
+  thirty (30) days of such termination, that such Products have been
+  un-installed and destroyed.
+
+13 - STANDARD PRODUCT: LICENSEE RESPONSIBILITIES
+
+13.1: Licensee is responsible for:
+
+13.1.1: The installation, testing, management and operational use of
+    the Licensed Products and the results obtained therefrom,
+    including all audit controls, as well as the combination of
+    Licensed Products with each other and with other equipment and/or
+    programs, except that if, agreed between the Parties in writing
+    under a separate agreement, Licensor may take responsibility for
+    installation and testing for a fee.
+
+13.1.2: Taking appropriate action to satisfy the following:
+
+13.1.2.1: not copying or otherwise providing or otherwise making
+      available for Use or otherwise the Products or any portion
+      thereof to any persons other than the employees of the Licensee
+      specifically engaged in the Use of the Products without the
+      express written consent of Licensor: and
+
+13.1.2.2: before disposing of any media, ensuring that any Licensed
+      Products contained thereon has been erased or destroyed
+
+
+14 - STANDARD PRODUCT: WARRANTY
+
+14.1: Licensor warrants that
+
+14.1.1: It has the right to license the Products;
+
+14.1.2: Provided Licensee obtains Support Services from Licensor,
+    complies with all obligations in this Agreement and the Products
+    are without modification by any person other than the Licensor,
+    the Products, as updated and when used in accordance with this
+    Agreement, will operate substantially in conformity with the
+    Documentation;
+
+14.1.3: The Product physical media will be free of material defects for
+    ninety (90) days, the warranty period, following Licensee's
+    receipt of the Product
+
+14.2: If, within the warranty period, Licensee detects a defect in a
+  Product's physical media, Licensee may return the defective physical
+  media to Licensor and Licensor shall replace said media free of
+  charge. 
+
+14.3: In the event of a breach of the warranties under this Clause 14
+  (media warranties excepted), Licensor shall have no liability or
+  obligations other than to reimburse the Licensee for the inoperative
+  Product in an amount not exceeding the said Product's license fee. 
+
+14.4: EXCEPT AS EXPRESSLY STATED IN THIS AGREEMENT, ALL WARRANTIES AND
+  CONDITIONS, WHETHER EXPRESS OR IMPLIED BY STATUTE, COMMON LAW OR
+  OTHERWISE (INCLUDING BUT NOT LIMITED TO SATISFACTORY QUALITY AND
+  FITNESS FOR PURPOSE), ARE HEREBY EXCLUDED TO THE EXTENT PERMITTED BY
+  LAW. NO WARRANTY IS MADE REGARDING THE RESULTS OF USAGE OF A PRODUCT
+  OR THAT A PRODUCT'S FUNCTIONALITY WILL MEET LICENSEE'S REQUIREMENTS
+  OR THAT THE PRODUCT WILL OPERATE UNINTERUPTED OR ERROR FREE. THIS
+  CLAUSE SHALL SURVIVE THE TERMINATION OF THIS AGREEMENT.
+
+
+15 - STANDARD PRODUCT:INTELLECTUAL PROPERTY RIGHTS - INDEMNITY
+
+15.1: Licensor, at its own expense, shall defend, or at its option,
+  settle any claim or suit against the Licensee on the basis of
+  infringement of any patent, trademark, copyright or trade secret by
+  the Product provided that:
+
+15.1.1: Licensee notifies Licensor promptly of each such claim or suit;
+    and
+
+15.1.2: Licensor is given sole control of the defence and/or
+    settlement; and 
+
+15.1.3: Licensee fully co-operates and provides all reasonable
+    assistance to Licensor in the defence or settlement; and
+
+15.1.4: Licensee makes no statement prejudicial to Licensor.
+
+15.2: Licensor will pay infringement claim defence costs, settlement
+  amounts and court awarded damages.  If such a claim appears likely,
+  Licensor may, at its expense and sole discretion:
+
+15.2.1: procure for Licensee the right to use the Product or the
+    affected part thereof; 
+
+15.2.2: replace the Product or affected part with other suitable
+    software;
+
+15.2.3: modify the software or affected part to make it non-infringing;
+    or 
+
+15.2.4: if none of the foregoing remedies is commercially feasible,
+    refund a pro-rated portion of the payments paid by Licensee to
+    Licensor for the Product or the affected part.
+
+15.3: Licensor shall have no obligations under this clause 15 to the
+  extent a claim is based on:
+
+15.3.1: the use of any version of the Product other than the current,
+    unaltered release, or if such infringement would have been avoided
+    by the use of a current, unaltered release; 
+
+15.3.2: the combination, operation or use of the Products with other
+    software which was not provided by Licensor if such infringement
+    would have been avoided in the absence of such combination,
+    operation or use; 
+
+15.3.3: Licensee's use of the Product in any manner inconsistent  with
+    the license granted under this Agreement including, without
+    limitation, the use of the Product on, or in conjunction with, an
+    operating  environment other than the COE specified in Purchase
+    Schedule, or any other operating environment not explicitly
+    approved in writing by Licensor ; or 
+
+15.3.4: the result of  the negligence or wilful misconduct of Licensee.
+
+15.4: Indemnification by Licensee. Licensee shall indemnify and hold
+  Licensor and its suppliers harmless from and against any cost,
+  losses, liabilities and expenses, including reasonable legal costs
+  arising from any claim relating to a resulting directly or
+  indirectly from:
+
+15.4.1: any claimed infringement or violation by Licensee of any
+    copyright, patent or other intellectual property right with
+    respect to Licensee's use of the Product outside the scope of this
+    Agreement; 
+
+15.4.2: any Licensee violation of export regulations; and
+
+15.4.3: any third party's access to or use of the Products
+
+
+16 - STANDARD PRODUCT: LIMITATION OF LIABILITY
+
+16.1: Licensor does not exclude or limit its liability to the Licensee
+  for death or personal injury caused by any negligent act or omission
+  or wilful misconduct or the Licensor or its employee.
+
+16.2: In entering this Agreement, Licensee had recourse to its own
+  skill and judgement and has not relied on any representations made
+  by Licensor.  Subject to this Clause 16: 
+
+16.2.1: In no event will Licensor or its suppliers be liable to
+    Licensee for any indirect, special, incidental, consequential or
+    punitive damages including without limitation, any loss of
+    profits, loss of revenues or loss of inaccuracy of any data even
+    if Licensor has been advised of the possibility of such damages; 
+
+16.2.2: Licensors liability to Licensee for actual damages for any
+    cause whatsoever shall be limited to the Fees paid by Licensor for
+    the Product upon which the damages were based; and 
+
+16.2.3: In no event shall Licensee raise any claim under this Agreement
+    more than two years after;
+
+16.2.3.1: The discovery of the circumstances giving rise to such claim
+      or 
+
+16.2.3.2: The effective date of the termination of this Agreement. 
+
+16.3: This clause shall survive the termination of this Agreement.
+
+
+
+17 - STANDARD PRODUCT: SOFTWARE SUPPORT AND MAINTENANCE
+
+17.1: Any software support and maintenance to be supplied by the
+  Licensor will be subject to a separate Software Support and
+  Maintenance Agreement.
+
+17.2: Software Support and Maintenance is mandatory for all Product
+  Licenses and is effective on shipment of the Product.
+
+
+18 - STANDARD PRODUCT: GENERAL
+
+18.1: Additional Services.  Unless otherwise agreed between Licensor
+   and Licensee under the terms of this Agreement, Licensor's
+   obligations under this Agreement do not include Product consulting
+   or Licensee personnel training.  Product consulting or Licensee
+   personnel training may be obtained by Licensee on an as-available
+   basis and at Licensor's then standard rates, subject to a separate
+   Services Agreement.
+
+18.2: Contracts (Rights of Third Parties) Act 1999.  Notwithstanding
+   any other provision in this Agreement, nothing in this Agreement
+   shall create or confer (whether expressly or by implication) any
+   rights or other benefits whether pursuant to the Contracts (Right
+   of Third Parties) Act 1999 or otherwise in favour of any person(s)
+   not a first party hereto.
+
+18.3: Governing Law and Venue. This Agreement shall be governed by and
+   construed in accordance with the laws of England and the parties
+   submit to the exclusive jurisdiction of the English Courts.
+
+18.4: Product Benchmarking.  Licensee shall not release the result of
+   any Product benchmark similar testing measure to any third party
+   without the prior written approval of Licensor for each such
+   release.
+
+18.5: Publicity material
+
+18.5.1: The Parties shall work together to ensure mutual benefit from
+     publicity material associated with this Agreement, but subject to
+     sub-clauses 18.5.2 and 
+
+18.5.3: below, neither Party shall issue such material without prior
+     written consent of the other Party (such consent not to be
+     unreasonably withheld and in any case a reasoned response shall
+     be given within seven (7) days of receiving the request for
+     consent from the other Party);
+
+18.5.2: The Licensee agrees that the Licensor shall be entitled to
+     announce the Agreement publicly subject to due performance of the
+     Agreement by the Licensor in accordance with clause 18 hereof;
+
+18.5.3: Subject to the prior written consent of the Licensee (such
+     consent not to be unreasonably withheld), the Licensor shall be
+     entitled to use the Licensee as a reference in the Licensor's own
+     publicity and advertising material
+
+18.6: Force Majeure. Except with respect to obligations to pay fees
+   when due hereunder, neither Party shall be deemed in default
+   Agreement to the extent that any delay or failure in performance of
+   its obligation results, without its fault or negligence, from any
+   cause beyond its reasonable control, provided said Party gives
+   reasonably prompt notice of the force majeure condition and uses
+   reasonable efforts to rectify said condition.
+
+
+18.7: Interpretation. In this agreement:
+
+18.7.1: Reference to any statue or statutory provision includes a
+     reference to that statute or statutory provision as from time to
+     time amended, extended or re-enacted: 
+
+18.7.2: Words importing the singular include the plural, words
+     importing any gender include every gender and words importing
+     persons include bodies corporate and unincorporate; and (in each
+     case) vice versa:
+
+18.7.3: Any Reference to a Party to this Agreement includes a
+     reference to his successors in title and permitted assigns; and
+
+18.7.4: The headings to the clauses are for ease of reference only and
+     shall not effect the interpretation or construction of this
+     Agreement.
+
+18.8: Notices.  All notices which are required to be given hereunder
+   shall be in writing and shall be sent to the address of the
+   recipient set out in this Agreement or such other address as the
+   recipient may designate by notice given with this Clause.  Any such
+   notice may be delivered personally or by first class pre-paid
+   letter or facsimile transmission or e-mail and shall deemed to have
+   been served if by hand when delivered, if by first class post 48
+   hours after posting and if by facsimile transmission or e-mail when
+   despatched.
+
+18.9: Confidential information.  Each Party shall retain in confidence
+   and require its employees, agents and contractors, to retain in
+   confidence all information contained in the Products and
+   Documentation and all information and know-how, regardless of form,
+   transmitted to such Party that the disclosing Party has identified
+   as being proprietary and/or confidential or which, by the nature of
+   the circumstances surrounding the disclosure, ought in good faith
+   to be treated as propriety and/or confidential ("Confidential
+   Information"). The receiving Party shall retain Confidential
+   Information in as secure a manner as reasonably possible, but in no
+   event less secure than the receiving Party retains its own
+   Confidential Information. Confidential Information shall remain the
+   sole property of the disclosing Party and shall not be disclosed to
+   any third party without the express written consent of the
+   disclosing Party (except, solely for the receiving Party's internal
+   business needs, to consultants who are bound by a written agreement
+   with the receiving Party to maintain the confidentiality of such
+   Confidential Information in a manner consistent with this
+   Agreement). Confidential Information shall not include any
+   information that (i) is at the time of disclosure or subsequently
+   become publicly available without the receiving Party's breach of
+   any obligations owed the disclosing Party; (ii) became known to the
+   receiving Party prior to the disclosing Party's disclosure of such
+   information to the receiving Party; (iii) became known to the
+   receiving Party from a source other than the disclosing Party other
+   than by breach of an obligation of confidentiality owed to the
+   disclosing Party; (iv) is independently developed by the receiving
+   Party; (v) is produced in compliance with applicable law or a court
+   order, provided the other Party is given reasonable notice of such
+   law or order and an opportunity to attempt to preclude or limit
+   such production. This Agreement constitutes the proprietary
+   information of Licensor. This clause shall survive termination of
+   the Agreement.
+
+18.10: Integration, Amendment and Assignment. This Agreement
+   constitutes the entire agreement between the parties and supersedes
+   all prior agreements or representations, oral or written, including
+   terms and conditions as may be printed on any purchase order
+   documentation used by the Licensee, any shrink-wrap license
+   accompanying the Products, and all other communications relating to
+   the subject matter hereof. This Agreement may not be modified or
+   any term or condition waived except by a written instrument signed
+   by a duly authorised representative of each Party. Neither this
+   Agreement nor any right, obligation of Product licensed hereunder
+   may be assigned by Licensee without Licensor's advanced written
+   consent, such consent not to be unreasonably withheld. The assignee
+   of this Agreement shall be bound to all terms and conditions of
+   this Agreement or the assignment of this Agreement shall be of no
+   effect and void.
+
+18.11: Severability.  If the whole or any part of any provision of
+   this Agreement is declared unlawful, void or unenforceable, then
+   that provision or part provision shall be severed from this
+   Agreement and will not affect the validity and enforceability of
+   any of the remaining provisions
+
+18.12: Power and Authority. The Licensee warrants it has full power
+   and authority to enter into this agreement and has taken all
+   necessary actions and obtained all relevant consents, approvals or
+   authorisations to enable it to effectively to enter into and
+   perform this Agreement.
+
+18.13: Waiver of Remedies. No forbearance, delay or indulgence by
+   either Party in enforcing the provisions of this agreement shall
+   prejudice or restrict the rights of that Party nor shall any waiver
+   of its rights operate as a waiver of any subsequent breach and no
+   right, power or remedy herein conferred upon or reserved for either
+   Party is exclusive of any other right, power or remedy available to
+   that Party and each such right, power or remedy shall be
+   cumulative.
+
+18.14: Non-Assignment. Save that either Party shall be entitled to
+   assign the benefit of this Agreement in whole or in part to any
+   company which is its holding or subsidiary company or a subsidiary
+   of its holding company (as such expressions are defined in the
+   Companies Act 1985, as amended) neither Party shall assign the
+   benefit of this Agreement without the prior written consent of the
+   other Party, such consent not to be unreasonably withheld.
+
+
+
+

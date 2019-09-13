@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# wxlicense wrapper to copy license keys into /data
+
+/opt/kognitio/wx2/current/bin/wxlicense "$@"
+
+cp -p /opt/kognitio/wx2/license/*.wxli /data/config

@@ -3,6 +3,8 @@
 # script to initialise a cluster
 
 sysid=$1
+volumes=$2
+volsize=$3
 lk=$2
 
 confile=/data/config/config
@@ -11,19 +13,70 @@ confile=/data/config/config
 if [ -f "$confile" ] ; then
    echo "The /data volume already contains an initialised system."
    echo "To overwrite either start with a fresh volume or manually"
-   echo "remove /data/config/config."
+   echo "run kognitio-cluster-reset."
    exit 2
 fi
+
+if [ ! -f /data/config/.eula-accepted ] ; then
+   echo "You must accept the Kognitio End User License Agreement to use Kodoop"
+   echo 'Would you like to see this now (type 'yes' to see it)?'
+   read qq
+   if [ "$qq" == "yes" ] ; then
+      more /opt/kognitio/LICENSE
+   fi
+   echo "Do you accept the Kognitio EULA?"
+   echo "Enter 'yes' to accept or anything else to reject"
+
+   read qqq
+   if [ "$qqq" == "yes" ] ; then
+      echo "You have accepted the EULA."
+      touch /data/config/.eula-accepted
+   else
+      echo "EULA is not accepted. Exiting."
+      exit 69
+   fi
+fi
+
+
+while [ -z "$sysid" ] ; do
+    echo "Enter a system ID for your Kognitio cluster 
+(up to 12 characters, [a-z0-9_]) :"
+    read sysid
+done
+
+
+while [ -z "$volumes" ] ; do
+    echo "Enter the number of storage volumes to create."
+    echo "You will be asked for the size of each volume later."
+    echo "Storage volumes are sparse files which hold the data stored in Kognitio."
+    
+    read volumes
+done
+
+
+while [ -z "$volsize" ] ; do
+    echo "Enter the maximum storage size in Gb for each storage volume."
+    echo "The minimum limit for a storage volume is 10G."
+    
+    read volsize
+done
+
+while [ -z "lk" ] ; do
+    echo "Enter a Kognitio license key for the cluster."
+    echo "If you do not have a license key enter - instead."
+    echo "Kognitio can be freely used without a license for clusters with"
+    echo "less than 512G of RAM."
+
+    read lk
+done
 
 wxsvc stop
 pkill -9 wxdb
 
-if [ -z "$sysid" ] ; then
-   echo "Usage:  kognitio-cluster-init <system id> [<num disks> [<disk size>]]"
-   exit 1
-fi
 
-
+mkdir /data/config
+mkdir /data/nodes
+mkdir /data/dfs
 
 cat >$confile <<EOF
 # This file should only be edited with wxviconf or wxconftool!
@@ -45,8 +98,13 @@ cp $confile /opt/kognitio/wx2/etc/config
 
 if [ -n "$lk" ] && [ "$lk" != "-" ]; then
    wxlicense -Ak $lk
-   cp /opt/kognitio/wx2/etc/license/*.wxli /data/config
 fi
 
 wxsvc start
+
+sleep 5
+
+create-kognitio-volumes $volumes $volsize
+
+
 

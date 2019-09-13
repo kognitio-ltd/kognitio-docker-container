@@ -24,10 +24,11 @@ dtop=$(($firstd + $dcount))
 dlist=
 
 while [ "$ct" -lt "$dtop" ] ; do
+      echo "Creating volume $ct"
       fn=${dfspath}/disk${ct}
       rm -f $fn
-      dd if=/dev/zero of=$fn seek=$(($dsbytes - 1)) count=1 bs=1
-      /opt/kognitio/wx2/current/software/Linux64/wxdiskid -C -s ${systemid} -u NEW_DISK_${ct} -N ${dssectors} -z -p $fn  
+      dd if=/dev/zero of=$fn seek=$(($dsbytes - 1)) count=1 bs=1 >&/dev/null
+      /opt/kognitio/wx2/current/software/Linux64/wxdiskid -C -s ${systemid} -u NEW_DISK_${ct} -N ${dssectors} -z -p $fn
 
       if [ -z "$dlist" ] ; then
          dlist=$fn
@@ -39,7 +40,6 @@ while [ "$ct" -lt "$dtop" ] ; do
 done
 
 wxconftool -G '{all}' -s system -a "disks=$dlist" -W
-cp -p /opt/kognitio/wx2/etc/config /data/config/config
 
 wxserver smd all restart
 

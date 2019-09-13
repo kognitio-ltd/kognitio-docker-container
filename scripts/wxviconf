@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# wxviconf wrapper to copy config into /data/config
+
+/opt/kognitio/wx2/current/bin/wxviconf "$@"
+
+cp -p /opt/kognitio/wx2/etc/config /data/config/config

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# wxconftool wrapper to copy config into /data/config
+
+/opt/kognitio/wx2/current/bin/wxconftool "$@"
+
+cp -p /opt/kognitio/wx2/etc/config /data/config/config

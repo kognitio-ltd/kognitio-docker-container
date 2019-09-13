@@ -1,0 +1,107 @@
+Kognitio Docker Container
+=========================
+
+Information
+-----------
+
+Kognitio's docker containers are built automatically from our Github repository:
+
+ [https://github.com/kognitio-ltd/kognitio-docker-container](https://github.com/kognitio-ltd/kognitio-docker-container) 
+
+Builds are hosted on Docker Hub here:
+
+[https://cloud.docker.com/u/kognitio/repository/docker/kognitio/kognitio](https://cloud.docker.com/u/kognitio/repository/docker/kognitio/kognitio)
+
+You can launch Kognitio  containers directly using the 'kognitio/kognitio' image,  make derived containers from the official ones or fork the repository and create a modified container to suit your needs.
+
+
+License
+-------
+
+Kognitio docker containers contain Kognitio's analytical platform software which is not part of the docker container repository (the Dockerfile downloads it from Kognitio's website).  Use of this software is subject to Kognitio's EULA (see the 'LICENSE' file in this repository or the /opt/kognitio/LICENSE file in the container image).  Kognitio's software is free to use for clusters with a total RAM capacity up to 512G (sum of memory limits on all containers).  For larger clusters a license is required, contact Kognitio for details.
+
+
+Links
+-----
+
+More information about Kognitio's software can be found at [https://kognitio.com](https://kognitio.com)
+
+Product documentation can be found at [https://kognitio.com/doccumentation](https://kognitio.com/doccumentation)
+
+Container Requirements
+----------------------
+
+Kognitio's docker container should work in all docker environments, including container orchestration environments which spread Kognitio containers for a cluster over multiple nodes.  The container requires the following to operate properly:
+
+ *    A docker volume should be mounted on /data.  This volume contains all of the persistent data for the Kognitio cluster, everything else in a container is ephemeral.
+
+ *    Kognitio will use as much RAM as you allow it to!  For this reason we recommend you always place a memory limit on your Kognitio containers to prevent them using up all of the memory on the node.  We also recommend setting --memory-swap to the same value as --memory in order to disable swapping for your containers because Kognitio is an in-memory product which works best without swap.
+
+ *    The minimum memory required to run a Kognitio container is 4G.  COntainers with less than 16G of RAM may exhibit reduced functionality under heavy loads.
+
+
+
+Starting a Kognitio system on Docker
+------------------------------------
+
+ *    To begin with, choose a system ID for your cluster.  This should be a string of up to 12 characters containing lower case letters, numbers and _ .  In these instructions we will use 'mycluster'.
+
+ *    Now, create a data volume to hold the permanent data for your Kognitio cluster.  This will be mounted by all Kognitio containers in the cluster on the /data mount point.  For example:
+`    
+docker volume create mycluster-datavol
+`
+
+
+ *    Once this is complete, create a single Kognitio container which mounts the data volume.  This will be used to initialise the container.  For example:
+`    
+docker run kognitio/kognitio --mount source=mycluster-datavol,destination=/data \
+                             --name=mycluster1 --memory 8G --memory-swap=8G \
+                             kognitio/kognitio
+`
+
+ *    Now use the running container to initialise the datavolume with the kognitio-cluster-init command. Supply the system ID you chose as the first argument, for example:
+`    docker exec -ti mycluster1 kognitio-cluster-init mycluster`
+The -ti flag is required here as this command will present the EULA and require you to accept it.
+
+ *    Now you're ready to create a Kognitio cluster.  Create as many containers as you need and check that everything is OK by running the 'wxprobe -H' command against one of the containers:
+`
+docker run kognitio/kognitio --mount source=mycluster-datavol,destination=/data \
+                             --name=mycluster2 --memory 8G --memory-swap=8G \
+                             kognitio/kognitio
+
+docker run kognitio/kognitio --mount source=mycluster-datavol,destination=/data \
+                             --name=mycluster3 --memory 8G --memory-swap=8G \
+                             kognitio/kognitio
+
+docker exec mycluster1 wxprobe -H
+`
+This command should show all 3 nodes and the appropriate quantity of storage.
+
+ *   Finally, initialise the Kognitio database by running 'wxadmin server+newsys syspass' on one of the containers.  Where syspass is replaced with the password you want to use as a sys password.  For example:
+`
+docker exec -ty mycluster1 wxadmin server+newsys mysyspassword
+`
+
+ *   Once this has finished the server should be available to use.  You can test this by running 'wxsubmit' in one of the containers, for example:
+`
+docker exec -ti mycluster1 wxsubmit -s localhost sys -p mysyspassword 
+`
+
+And then try some SQL, for example:
+`
+SELECT os_nodename FROM sys.ipe_nodeinfo
+`
+
+To see a list of the docker containers in the cluster.
+
+
+ *   And now you have a running Kognitio system.  All containers are ephemeral, with all persistent data residing only in the /data volume.  This means that you can remove some or all of the containers and/or start up new ones at any time.  When you change the set of running containers, run 'wxserver start' in one of the containers to inform Kognitio that this has happened so it can reconfigure appropriately and make the system available again.
+
+
+Connecting
+----------
+
+The docker container exports the Kognitio ODBC port on TCP port 6550.  Clients can connect to this port on any of the docker containers using Kognitio's client tools or JDBC/ODBC drivers which are available on our website.  The easiest way to export the ODBC port is to start one of the docker containers with the -p argument (e.g. '-p 6550:6550').
+
+
+

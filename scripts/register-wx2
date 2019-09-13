@@ -1,0 +1,89 @@
+#!/bin/bash
+# node registration script for local files
+
+nodedir=$1
+linknr=$2
+my_name=$3
+my_addr=$4
+mode=$5
+
+ulimit -v unlimited
+
+mkdir -p $nodedir
+
+if [ "$mode" == "register" ] ; then
+    npath="$nodedir/$linknr-$my_name"
+    cat > "$npath" <<EOF 
+$my_addr
+EOF
+
+    if [ $? -ne 0 ] ; then
+        echo "FAILED TO REGISTER, RC $?"
+        exit 1;
+    fi
+
+    sleep 10
+    cat $nodedir/$linknr-*
+
+    if [ $? -ne 0 ]  ; then
+        echo "FAILED TO LIST, RC $?"
+        exit 1;
+    fi
+elif [ "$mode" == "deregister" ] ; then
+    npath="$nodedir/$linknr-$my_name"
+    rm -f "$npath"
+    if [ $? -ne 0 ] ; then
+        echo "FAILED TO DEREGISTER, RC $?"
+        exit 1;
+    fi
+elif [ "$mode" == "refresh" ] ; then
+    # Look for the entry and update the timestamp if found
+    # or create if not found?
+    npath="$nodedir/$linknr-$my_name"
+    
+    if [ -e "$npath" ] ; then
+        # Found it so touch it to refresh timestamp
+        touch "$npath"
+        if [ $? -ne 0 ] ; then
+            echo "FAILED TO REFRESH, RC $?"
+        fi
+    else
+        # Not found so recreate it?
+        cat > "$npath" <<EOF 
+$my_addr
+EOF
+
+        if [ $? -ne 0 ] ; then
+            echo "FAILED TO REFRESH/REG, RC $?"
+            exit 1;
+        fi
+    fi
+
+    # Now look at all other entries and remove any that are older than n seconds.
+    oldest=$(date -d "-10 minutes" +"%s") # 24 hours ago in seconds (default if no argument supplied)
+    if [ $# -gt 5 ] ; then
+        let oldest=$(date +"%s")-$6  # 6th argument to refresh is how long before things are stale
+    fi
+    let c=0 # Column number
+    for i in `ls -l --time-style=long-iso $nodedir/$linknr-* | grep -v "^Found"`; do
+        if [ $c -eq 5 ] ; then # 5 is date
+            fsdate=$i
+        elif [ $c -eq 6 ] ; then # 6 is time
+            fstime=$i
+        elif [ $c -eq 7 ] ; then # 7 is filename
+            fsfn=$i
+        fi
+        let c=$c+1
+        if [ $c -eq 8 ] ; then
+            let c=0 # Reset ready for next row
+            fsdt=$(date -d "$fsdate $fstime UTC" +"%s") # Convert to seconds
+            if [ $fsdt -lt $oldest ] ; then
+                rm -f "$fsfn"  # It's out of date, remove
+            fi
+        fi
+    done
+
+fi
+
+
+

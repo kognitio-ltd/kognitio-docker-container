@@ -1,0 +1,46 @@
+FROM centos:latest
+
+ARG kognitio_version=80203rel190726
+
+
+
+RUN yum install -y net-tools bind-utils perl python zlib openssl tar gzip sudo libcgroup-tools
+
+ADD https://releases.kognitio.com/wx2/wx2-${kognitio_version}.tgz /tmp/kognitio.tgz
+
+
+RUN useradd -d /home/kognitio.admin -m -c "Kognitio Admin User" kognitio.admin ;\
+     mkdir -p /opt/kognitio ;\
+    chown kognitio.admin:kognitio.admin /opt/kognitio ;\
+    mkdir -p /data/dfs ;\
+    mkdir -p /data/config ;\
+    mkdir -p /data/nodes ;\
+    chown -R kognitio.admin:kognitio.admin /data ;\
+    mkdir /home/kognitio.admin/.ssh ;\
+    chown -R kognitio.admin:kognitio.admin /home/kognitio.admin ;\
+    chmod 644 /tmp/kognitio.tgz
+
+
+ADD scripts /opt/kognitio/scripts
+
+RUN sudo -u kognitio.admin tar -C /tmp -xzf /tmp/kognitio.tgz;\
+    sudo -u kognitio.admin /tmp/wxinstaller-${kognitio_version} -p /tmp/wx2-${kognitio_version}.wxpkg -S kognitio -m - -a - -n all -t full -O install_root=/opt/kognitio/wx2 -O accept_eula=yes -u -C
+
+RUN sudo -u kognitio.admin /opt/kognitio/wx2/current/bin/wxconftool -l -s system -a partitions= -W ;\
+    sudo -u kognitio.admin /opt/kognitio/wx2/current/bin/wxconftool -l -s system -a memsize=\`/opt/kognitio/scripts/memory-size\` -W ;\
+    sudo -u kognitio.admin /opt/kognitio/wx2/current/bin/wxconftool -l -s network -a "regcmd=/opt/kognitio/scripts/register-wx2 /data/nodes" -W
+
+
+EXPOSE 6550
+
+WORKDIR /home/kognitio.admin
+
+USER kognitio.admin
+
+ENV PATH /opt/kognitio/scripts:/opt/kognitio/wx2/current/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+ENTRYPOINT /opt/kognitio/scripts/kognitio-entrypoint
+
+VOLUME /data
+
+                

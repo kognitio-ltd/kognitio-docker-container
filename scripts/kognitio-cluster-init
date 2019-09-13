@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# script to initialise a cluster
+
+sysid=$1
+lk=$2
+
+confile=/data/config/config
+
+
+if [ -f "$confile" ] ; then
+   echo "The /data volume already contains an initialised system."
+   echo "To overwrite either start with a fresh volume or manually"
+   echo "remove /data/config/config."
+   exit 2
+fi
+
+wxsvc stop
+pkill -9 wxdb
+
+if [ -z "$sysid" ] ; then
+   echo "Usage:  kognitio-cluster-init <system id> [<num disks> [<disk size>]]"
+   exit 1
+fi
+
+
+
+cat >$confile <<EOF
+# This file should only be edited with wxviconf or wxconftool!
+
+[general]
+system_id=${sysid}
+
+[boot options]
+external_tables=yes
+external_scripts=yes
+idle_core_cost=0
+numa_aware=no
+
+EOF
+
+chmod 644 $confile
+
+cp $confile /opt/kognitio/wx2/etc/config
+
+if [ -n "$lk" ] && [ "$lk" != "-" ]; then
+   wxlicense -Ak $lk
+   cp /opt/kognitio/wx2/etc/license/*.wxli /data/config
+fi
+
+wxsvc start
+

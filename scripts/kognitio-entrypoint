@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -f /data/config/config ] ; then
+    cp -p /data/config/config /opt/kognitio/wx2/etc
+    cp -f /data/config/*.wxli /opt/kognitio/wx2/licenses
+    wxsvc start
+fi
+
+while [ 1 ] ; do
+    sleep 3600    # we don't need to do anything here.  Just keep the container alive
+done

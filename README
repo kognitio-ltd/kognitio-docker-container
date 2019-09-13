@@ -101,7 +101,7 @@ Now you have a running Kognitio system.  All containers are ephemeral, with all 
 
           docker exec -ti mycluster1 wxserver start
 
-This means that you can remove some or all of the containers and/or start up new ones at any time.  You can also change the number and type of containers in use any time so long as you re-run 'wxserver start' after you make changes.
+This means that you can remove some or all of the containers and/or start up new ones at any time.  You can also change the number and size of containers in use any time so long as you re-run 'wxserver start' after you make changes.
 
 
 Connecting

@@ -15,10 +15,15 @@ while [ -z "$continue" ] ; do
       read continue
       if [ "$continue" != "continue" ] ; then
          echo "You entered $continue not continue"
-         continue =
+         continue=
       fi
 done
 
 rm -rf /data/config
 rm -rf /data/nodes
 rm -rf /data/dfs
+
+wxsvc stop >&/dev/null
+pkill -9 wxdb >&/dev/null
+
+echo "Cluster data removed"

@@ -10,7 +10,7 @@ ADD https://releases.kognitio.com/wx2/wx2-${kognitio_version}.tgz /tmp/kognitio.
 
 
 RUN useradd -d /home/kognitio.admin -m -c "Kognitio Admin User" kognitio.admin ;\
-     mkdir -p /opt/kognitio ;\
+    mkdir -p /opt/kognitio ;\
     chown kognitio.admin:kognitio.admin /opt/kognitio ;\
     mkdir -p /data/dfs ;\
     mkdir -p /data/config ;\
@@ -27,9 +27,10 @@ COPY LICENSE /opt/kognitio
 COPY README /opt/kognitio
 
 RUN sudo -u kognitio.admin tar -C /tmp -xzf /tmp/kognitio.tgz;\
-    sudo -u kognitio.admin /tmp/wxinstaller-${kognitio_version} -p /tmp/wx2-${kognitio_version}.wxpkg -S kognitio -m - -a - -n all -t full -O install_root=/opt/kognitio/wx2 -O accept_eula=yes -u -C
-
-RUN sudo -u kognitio.admin /opt/kognitio/wx2/current/bin/wxconftool -l -s system -a partitions= -W ;\
+    sudo -u kognitio.admin /tmp/wxinstaller-${kognitio_version} -p /tmp/wx2-${kognitio_version}.wxpkg -S kognitio -m - -a - -n all -t full -O install_root=/opt/kognitio/wx2 -O accept_eula=yes -u -C ;\
+    sudo -u kognitio.admin rm -f /tmp/wxinstaller-${kognitio_version} /tmp/wx2-${kognitio_version}.wxpkg ;\
+    rm -f /tmp/kognitio.tgz ;\
+    sudo -u kognitio.admin /opt/kognitio/wx2/current/bin/wxconftool -l -s system -a partitions= -W ;\
     sudo -u kognitio.admin /opt/kognitio/wx2/current/bin/wxconftool -l -s system -a memsize=\`/opt/kognitio/scripts/memory-size\` -W ;\
     sudo -u kognitio.admin /opt/kognitio/wx2/current/bin/wxconftool -l -s network -a "regcmd=/opt/kognitio/scripts/register-wx2 /data/nodes" -W
 

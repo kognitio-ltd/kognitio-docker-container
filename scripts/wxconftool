@@ -4,4 +4,4 @@
 
 /opt/kognitio/wx2/current/bin/wxconftool "$@"
 
-cp -p /opt/kognitio/wx2/etc/config /data/config/config
+cp -fp /opt/kognitio/wx2/etc/config /data/config/config

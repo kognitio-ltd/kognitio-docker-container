@@ -8,7 +8,7 @@ volsize=$3
 lk=$2
 
 confile=/data/config/config
-
+secretfile=/data/config/secret
 
 if [ -f "$confile" ] ; then
    echo "The /data volume already contains an initialised system."
@@ -61,7 +61,7 @@ while [ -z "$volsize" ] ; do
     read volsize
 done
 
-while [ -z "lk" ] ; do
+while [ -z "$lk" ] ; do
     echo "Enter a Kognitio license key for the cluster."
     echo "If you do not have a license key enter - instead."
     echo "Kognitio can be freely used without a license for clusters with"
@@ -74,9 +74,9 @@ wxsvc stop
 pkill -9 wxdb
 
 
-mkdir /data/config
-mkdir /data/nodes
-mkdir /data/dfs
+mkdir -p /data/config
+mkdir -p /data/nodes
+mkdir -p /data/dfs
 
 cat >$confile <<EOF
 # This file should only be edited with wxviconf or wxconftool!
@@ -94,7 +94,33 @@ EOF
 
 chmod 644 $confile
 
-cp $confile /opt/kognitio/wx2/etc/config
+
+
+secret=
+# Generate a shared secret for message passing signature (use 0 to 9, a to z, A to Z, - and _)
+for i in {0..63} # Its 64 characters long
+do
+    char=$((RANDOM%64 + 48)) # 48 is '0' start from '0'
+    if [ $char -gt 57 ]; then # 57 is '9'
+        let char=($char + 7)  # Move char into A - Z area
+    fi
+    if [ $char -gt 90 ]; then # 90 is 'Z'
+        let char=($char + 6)  # Move char into a - z area
+    fi
+    if [ $char -eq 123 ]; then # 123 is '{'
+        let char=95            # 95 is '_' swap { for _
+    elif [ $char -eq 124 ]; then # 124 is '|'
+        let char=45              # 45 is '-' swap | for -
+    fi
+    secret=${secret}$(printf "\x$(printf %x $char)")
+done
+
+echo "$secret" >$secretfile
+chmod 600 $secretfile
+
+
+cp -fp $secretfile /opt/kognitio/wx2/etc/secret
+cp -fp $confile /opt/kognitio/wx2/etc/config
 
 if [ -n "$lk" ] && [ "$lk" != "-" ]; then
    wxlicense -Ak $lk

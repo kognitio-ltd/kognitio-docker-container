@@ -2,6 +2,7 @@
 
 if [ -f /data/config/config ] ; then
     cp -p /data/config/config /opt/kognitio/wx2/etc
+    cp -p /data/config/secret /opt/kognitio/wx2/etc
     cp -f /data/config/*.wxli /opt/kognitio/wx2/licenses
     wxsvc start
 fi

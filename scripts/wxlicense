@@ -4,4 +4,4 @@
 
 /opt/kognitio/wx2/current/bin/wxlicense "$@"
 
-cp -p /opt/kognitio/wx2/license/*.wxli /data/config
+cp -fp /opt/kognitio/wx2/license/*.wxli /data/config

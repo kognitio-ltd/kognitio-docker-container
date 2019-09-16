@@ -2,11 +2,14 @@ FROM centos:latest
 
 ARG kognitio_version=80203rel190726
 
-
-
-RUN yum install -y net-tools bind-utils perl python zlib openssl tar gzip sudo libcgroup-tools
-
+ADD https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm /tmp/epel.noarch.rpm
 ADD https://releases.kognitio.com/wx2/wx2-${kognitio_version}.tgz /tmp/kognitio.tgz
+
+RUN yum install -y /tmp/epel.noarch.rpm; \
+    yum update ;\
+    yum install -y net-tools bind-utils perl python zlib openssl tar gzip sudo libcgroup-tools java-1.8.0-openjdk-headless python-pip python36 python36-pip ;\
+    pip install numpy==1.16.5 scipy==1.2.2 ;\
+    pip3 install numpy scipy
 
 
 RUN useradd -d /home/kognitio.admin -m -c "Kognitio Admin User" kognitio.admin ;\

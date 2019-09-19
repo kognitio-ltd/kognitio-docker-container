@@ -6,7 +6,8 @@ if [ -f /data/config/config ] ; then
     cp -f /data/config/*.wxli /opt/kognitio/wx2/licenses
     wxsvc start
 else
-    /opt/kognitio/scripts/set-data-owner      # make sure the proper ownership is on /data so we can create things later
+    sudo chown kognitio.admin:kognitio.admin /data       # make sure the proper ownership is on /data so we can create things later
+    sudo chmod 755 /data
 fi
 
 while [ 1 ] ; do

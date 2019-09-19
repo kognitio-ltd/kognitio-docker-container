@@ -21,14 +21,11 @@ RUN useradd -d /home/kognitio.admin -m -c "Kognitio Admin User" kognitio.admin ;
     chown -R kognitio.admin:kognitio.admin /data ;\
     mkdir /home/kognitio.admin/.ssh ;\
     chown -R kognitio.admin:kognitio.admin /home/kognitio.admin ;\
-    chmod 644 /tmp/kognitio.tgz
+    chmod 644 /tmp/kognitio.tgz ;\
+    echo "kognitio.admin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 
 ADD scripts /opt/kognitio/scripts
-
-RUN chown root:root /opt/kognitio/scripts/set-data-owner ;\
-    chmod +s /opt/kognitio/scripts/set-data-owner
-
 
 COPY LICENSE /opt/kognitio
 COPY README /opt/kognitio

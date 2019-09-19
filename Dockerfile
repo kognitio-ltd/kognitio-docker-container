@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:centos7
 
 ARG kognitio_version=80203rel190726
 

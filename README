@@ -81,7 +81,7 @@ This command should show all 3 nodes and the appropriate quantity of storage.  Y
 
  *   Finally, initialise the Kognitio database by running 'wxadmin server+newsys syspass' on one of the containers.  Where syspass is replaced with the password you want to use as a sys password.  For example:
 
-          docker exec -ti mycluster1 wxadmin server+newsys mysyspassword
+          docker exec -ti mycluster1 kognitio-create-database mysyspassword
 
 
  *   Once this has finished the server should be available to use.  You can test this by running 'wxsubmit' in one of the containers, for example:

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+chown kognitio.admin:kognitio.admin /data
+chmod 755 /data
+

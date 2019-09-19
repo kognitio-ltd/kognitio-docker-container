@@ -26,6 +26,10 @@ RUN useradd -d /home/kognitio.admin -m -c "Kognitio Admin User" kognitio.admin ;
 
 ADD scripts /opt/kognitio/scripts
 
+RUN chown root:root /opt/kognitio/scripts/set-data-owner ;\
+    chmod +s /opt/kognitio/scripts/set-data-owner
+
+
 COPY LICENSE /opt/kognitio
 COPY README /opt/kognitio
 

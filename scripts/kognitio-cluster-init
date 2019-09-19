@@ -18,8 +18,8 @@ if [ -f "$confile" ] ; then
 fi
 
 if [ ! -f /data/config/.eula-accepted ] ; then
-   echo "You must accept the Kognitio End User License Agreement to use Kodoop"
-   echo 'Would you like to see this now (type 'yes' to see it)?'
+   echo "You must accept the Kognitio End User License Agreement to use Kognitio"
+   echo "Would you like to see this now (type 'yes' to see it)?"
    read qq
    if [ "$qq" == "yes" ] ; then
       more /opt/kognitio/LICENSE

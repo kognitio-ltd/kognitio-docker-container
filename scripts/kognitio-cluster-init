@@ -10,6 +10,11 @@ lk=$2
 confile=/data/config/config
 secretfile=/data/config/secret
 
+mkdir -p /data/config
+mkdir -p /data/nodes
+mkdir -p /data/dfs
+
+
 if [ -f "$confile" ] ; then
    echo "The /data volume already contains an initialised system."
    echo "To overwrite either start with a fresh volume or manually"
@@ -73,10 +78,6 @@ done
 wxsvc stop
 pkill -9 wxdb
 
-
-mkdir -p /data/config
-mkdir -p /data/nodes
-mkdir -p /data/dfs
 
 cat >$confile <<EOF
 # This file should only be edited with wxviconf or wxconftool!

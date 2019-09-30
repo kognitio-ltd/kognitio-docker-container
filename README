@@ -28,6 +28,13 @@ More information about Kognitio's software can be found at https://kognitio.com
 
 Product documentation can be found at https://kognitio.com/documentation
 
+Blog posts describing the container in more detail:
+
+ *    https://kognitio.com/blog/kognitio-docker -- Overview
+ *    https://kognitio.com/blog/kognitio-docker-2 -- Generic Usage Instructions
+ *    https://kognitio.com/blog/kognitio-docker-3 -- Walkthrough with vanilla Docker commands
+ *    https://kognitio.com/blog/kognitio-docker-4 -- Walkthrough on Kubernetes
+
 Container Requirements
 ----------------------
 

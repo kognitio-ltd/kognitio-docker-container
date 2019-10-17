@@ -126,13 +126,14 @@ chmod 600 $secretfile
 cp -fp $secretfile /opt/kognitio/wx2/etc/secret
 cp -fp $confile /opt/kognitio/wx2/etc/config
 
+wxsvc start
+
+sleep 10
+
 if [ -n "$lk" ] && [ "$lk" != "-" ]; then
    wxlicense -Ak $lk
 fi
 
-wxsvc start
-
-sleep 5
 
 create-kognitio-volumes $volumes $volsize
 

@@ -91,6 +91,9 @@ external_scripts=yes
 idle_core_cost=0
 numa_aware=no
 
+[disks]
+sparse_file=yes
+
 EOF
 
 chmod 644 $confile

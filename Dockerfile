@@ -1,9 +1,10 @@
 FROM centos:centos7
 
 ARG kognitio_version=80203rel190923
+ARG kognitio_download=https://releases.kognitio.com/wx2/wx2-${kognitio_version}.tgz
 
 ADD https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm /tmp/epel.noarch.rpm
-ADD https://releases.kognitio.com/wx2/wx2-${kognitio_version}.tgz /tmp/kognitio.tgz
+ADD ${kognitio_download} /tmp/kognitio.tgz
 
 RUN yum install -y /tmp/epel.noarch.rpm; \
     yum update ;\

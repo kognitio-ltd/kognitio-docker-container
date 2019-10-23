@@ -1,6 +1,6 @@
 FROM centos:centos7
 
-ARG kognitio_version=80204rel191021
+ARG kognitio_version=80204rel191022
 ARG kognitio_download=https://releases.kognitio.com/wx2/wx2-${kognitio_version}.tgz
 
 ADD https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm /tmp/epel.noarch.rpm
